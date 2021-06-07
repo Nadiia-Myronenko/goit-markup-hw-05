@@ -36,7 +36,7 @@
         <section class="hero">
             <div class="overlay">
                 <h1 class="main-heading">Эффективные решения для вашего бизнеса</h1>
-                <button class="hero-btn" type="button">Заказать услугу</button>
+                <button data-modal-open class="hero-btn" type="button">Заказать услугу</button>
             </div>
         </section>
         <!--Секция об особенностях работы веб-студии-->
@@ -245,6 +245,15 @@
                 </ul>
             </div>
         </section>
+        <div data-modal class="backdrop is-hidden">
+            <div class="modal">
+                <button data-modal-close class="close-btn" type="button">
+                    <svg class="cross-icon">
+                        <use href="./images/symbol-defs.svg#cross"></use>
+                    </svg>
+                </button>
+            </div>
+        </div>
     </main>
     <!--Подвал страницы-->
     <footer class="footer-block">
@@ -278,5 +287,6 @@
             </div>
         </div>
     </footer>
+    <script src="./js/modal.js"></script>
 </body>
 </html>
