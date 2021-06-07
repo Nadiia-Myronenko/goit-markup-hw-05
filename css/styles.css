@@ -12,6 +12,7 @@
   --overlay-color: rgba(47, 48, 58, 0.4);
   --icon-color: #afb1b8;
   --footer-icon-bg: rgba(255, 255, 255, 0.1);
+  --card-overlay-color: rgba(33, 150, 243, 0.9);
 }
 
 body {
@@ -415,6 +416,7 @@ h2 {
   margin-bottom: 30px;
 }
 .projects-list .card-link {
+  position: relative;
   display: block;
   color: var(--main-text-color);
 }
@@ -442,6 +444,23 @@ h2 {
 .subheading {
   font-size: 16px;
   line-height: 1.875;
+}
+.card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 294px;
+  background: var(--card-overlay-color);
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  opacity: 0;
+}
+.project-description {
+  font-size: 18px;
+  line-height: 1.556;
+  color: var(--light-color);
 }
 /* Project cards styles end*/
 
