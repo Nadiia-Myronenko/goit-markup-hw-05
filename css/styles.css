@@ -65,8 +65,6 @@ h2 {
 .header-block .container {
   display: flex;
   justify-content: space-between;
-  /*padding-top: 24px;
-  padding-bottom: 25px;*/
   align-items: center;
 }
 .nav-block {
@@ -127,6 +125,7 @@ h2 {
   padding-bottom: 32px;
   display: flex;
   align-items: center;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .nav-link:hover,
 .nav-link:focus,
@@ -201,10 +200,11 @@ h2 {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
   border: none;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .hero-btn:hover,
 .hero-btn:focus {
-  background: var(--hover-button);
+  background-color: var(--hover-button);
   cursor: pointer;
 }
 /* Herro secion end*/
@@ -215,9 +215,6 @@ h2 {
 }
 .features-list {
   display: flex;
-}
-.features-list-item {
-  /* width: 270px;*/
 }
 .features-list-item:not(:last-child) {
   margin-right: 30px;
@@ -324,6 +321,8 @@ h2 {
   color: var(--icon-color);
   padding: 12px;
   border-radius: 50%;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .team-cards .social-network-icon {
   width: 20px;
@@ -332,7 +331,7 @@ h2 {
 }
 .team-cards .button:hover,
 .team-cards .button:focus {
-  background: var(--brand-color);
+  background-color: var(--brand-color);
   color: var(--light-color);
 }
 /* Team section end */
@@ -355,6 +354,8 @@ h2 {
   border: 1px solid var(--icon-color);
   border-radius: 4px;
   padding: 16px 32px;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .company-link:hover,
 .company-link:focus {
@@ -396,12 +397,13 @@ h2 {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .btn:hover,
 .btn:focus {
   background-color: var(--brand-color);
   color: var(--light-color);
-  border: none;
 }
 /* Filter styles end */
 /* Project cards styles */
@@ -417,9 +419,9 @@ h2 {
   margin-bottom: 30px;
 }
 .projects-list .card-link {
-  position: relative;
   display: block;
   color: var(--main-text-color);
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .projects-list .card-link:hover,
 .projects-list .card-link:focus {
@@ -446,18 +448,28 @@ h2 {
   font-size: 16px;
   line-height: 1.875;
 }
+.img-thumb {
+  position: relative;
+  overflow: hidden;
+}
 .card-overlay {
   position: absolute;
-  top: 0;
-  left: 0;
+  /* top: 0;
+  left: 0;*/
+  z-index: 1;
   width: 100%;
   height: 294px;
   background: var(--card-overlay-color);
   padding: 24px;
   display: flex;
   align-items: center;
-  opacity: 0;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+.projects-list .card-link:hover .card-overlay,
+.projects-list .card-link:focus .card-overlay {
+  transform: translateY(-100%);
+}
+
 .project-description {
   font-size: 18px;
   line-height: 1.556;
@@ -472,23 +484,28 @@ h2 {
   width: 100%;
   height: 100%;
   background: var(--backdrop-color);
+  opacity: 1;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .backdrop.is-hidden {
   opacity: 0;
   pointer-events: none;
-  visibility: hidden;
+}
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(0.9);
 }
 .modal {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
   height: 581px;
   width: 528px;
   background: var(--light-color);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .close-btn {
   position: absolute;
@@ -540,12 +557,12 @@ h2 {
 }
 .footer-link {
   color: var(--footer-link-color);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .footer-link:hover,
 .footer-link.nav-link:focus {
   cursor: pointer;
   color: var(--brand-color);
-  font-weight: normal;
 }
 .footer-block .social-networks-list {
   display: flex;
@@ -560,6 +577,8 @@ h2 {
   color: var(--light-color);
   padding: 12px;
   border-radius: 50%;
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .footer-block .social-network-icon {
   width: 20px;
